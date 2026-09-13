@@ -1,1296 +1,727 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Amoah Fredrick Kobby | Telecom Engineer</title>
-
-    <meta name="description"
-          content="Portfolio of Amoah Fredrick Kobby, Telecom Engineer interested in telecommunications, networking, software and technology.">
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        :root {
-            --bg: #070b18;
-            --bg2: #0b1122;
-            --card: #10182d;
-            --card2: #131d35;
-            --border: #24314d;
-            --blue: #38bdf8;
-            --blue2: #0ea5e9;
-            --text: #f8fafc;
-            --muted: #94a3b8;
-            --white-muted: #cbd5e1;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* =========================
-           NAVIGATION
-        ========================= */
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(7, 11, 24, 0.94);
-            backdrop-filter: blur(14px);
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
-        }
-
-        nav {
-            max-width: 1150px;
-            min-height: 76px;
-            margin: auto;
-            padding: 14px 25px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        .logo span {
-            color: var(--blue);
-        }
-
-        nav ul {
-            display: flex;
-            gap: 28px;
-            list-style: none;
-        }
-
-        nav a {
-            color: var(--white-muted);
-            text-decoration: none;
-            font-size: 15px;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--blue);
-        }
-
-        .menu-btn {
-            display: none;
-            background: transparent;
-            border: none;
-            color: var(--blue);
-            font-size: 28px;
-            cursor: pointer;
-        }
-
-        /* =========================
-           GENERAL
-        ========================= */
-
-        section {
-            max-width: 1150px;
-            margin: auto;
-            padding: 115px 25px;
-        }
-
-        .section-title {
-            font-size: 42px;
-            margin-bottom: 45px;
-            letter-spacing: -1px;
-        }
-
-        .section-title span {
-            color: var(--blue);
-        }
-
-        /* =========================
-           HERO
-        ========================= */
-
-        #home {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 135px;
-        }
-
-        .hero {
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1.5fr 0.8fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-text small {
-            color: var(--blue);
-            font-weight: bold;
-            letter-spacing: 3px;
-            font-size: 13px;
-        }
-
-        .hero h1 {
-            font-size: clamp(48px, 7vw, 78px);
-            line-height: 1;
-            margin: 18px 0;
-            letter-spacing: -3px;
-        }
-
-        .hero h1 span {
-            color: var(--blue);
-        }
-
-        .hero h2 {
-            font-size: 28px;
-            color: var(--white-muted);
-            margin-bottom: 18px;
-        }
-
-        .hero p {
-            color: var(--muted);
-            font-size: 18px;
-            max-width: 650px;
-            margin-bottom: 30px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 13px 23px;
-            border-radius: 7px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .primary {
-            background: var(--blue);
-            color: #04101a;
-        }
-
-        .primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(56, 189, 248, 0.2);
-        }
-
-        .outline {
-            border: 1px solid var(--blue);
-            color: var(--blue);
-        }
-
-        .outline:hover {
-            background: var(--blue);
-            color: #04101a;
-            transform: translateY(-3px);
-        }
-
-        /* =========================
-           PHOTO PLACEHOLDER
-        ========================= */
-
-        .photo-area {
-            display: flex;
-            justify-content: center;
-        }
-
-        .photo-placeholder {
-            width: 290px;
-            height: 290px;
-            border-radius: 50%;
-            border: 2px dashed var(--blue);
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-
-            color: var(--muted);
-            padding: 35px;
-
-            background:
-                radial-gradient(
-                    circle,
-                    #13213d,
-                    var(--bg)
-                );
-
-            box-shadow:
-                0 0 60px rgba(56, 189, 248, 0.08);
-        }
-
-        .photo-placeholder strong {
-            display: block;
-            color: var(--blue);
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
-
-        /* =========================
-           ABOUT
-        ========================= */
-
-        .about-content {
-            max-width: 850px;
-        }
-
-        .about-content p {
-            color: var(--muted);
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .highlight {
-            color: var(--blue);
-            font-weight: bold;
-        }
-
-        /* =========================
-           SKILLS
-        ========================= */
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .skill-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            padding: 28px 22px;
-            border-radius: 12px;
-            transition: 0.3s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-7px);
-            border-color: var(--blue);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-        }
-
-        .skill-icon {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-
-        .skill-card h3 {
-            color: var(--blue);
-            margin-bottom: 10px;
-        }
-
-        .skill-card p {
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        /* =========================
-           PROJECTS
-        ========================= */
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .project-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--blue);
-            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
-        }
-
-        .project-image {
-            height: 170px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background:
-                linear-gradient(
-                    135deg,
-                    #101b34,
-                    #172642
-                );
-            border-bottom: 1px solid var(--border);
-        }
-
-        .project-image-icon {
-            font-size: 55px;
-        }
-
-        .project-content {
-            padding: 26px;
-        }
-
-        .project-number {
-            color: var(--blue);
-            font-weight: bold;
-            font-size: 12px;
-            letter-spacing: 2px;
-        }
-
-        .project-card h3 {
-            font-size: 21px;
-            margin: 12px 0;
-        }
-
-        .project-card p {
-            color: var(--muted);
-            font-size: 15px;
-            margin-bottom: 18px;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 7px;
-            margin-bottom: 22px;
-        }
-
-        .project-tag {
-            display: inline-block;
-            padding: 5px 10px;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            color: var(--blue);
-            font-size: 11px;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 10px;
-        }
-
-        .project-btn {
-            padding: 9px 13px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: bold;
-            border: 1px solid var(--border);
-            color: var(--white-muted);
-            transition: 0.3s;
-        }
-
-        .project-btn:hover {
-            border-color: var(--blue);
-            color: var(--blue);
-        }
-
-        /* =========================
-           CONTACT
-        ========================= */
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .contact-intro {
-            color: var(--muted);
-            font-size: 18px;
-            max-width: 550px;
-        }
-
-        .contact-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            padding: 30px;
-            border-radius: 14px;
-        }
-
-        .contact-item {
-            margin-bottom: 22px;
-        }
-
-        .contact-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .contact-item small {
-            display: block;
-            color: var(--muted);
-            margin-bottom: 5px;
-        }
-
-        .contact-item a {
-            color: var(--blue);
-            text-decoration: none;
-            word-break: break-word;
-        }
-
-        /* =========================
-           CV AREA
-        ========================= */
-
-        .cv-box {
-            margin-top: 45px;
-            padding: 28px;
-            border: 1px dashed var(--border);
-            border-radius: 12px;
-            background: var(--bg2);
-            max-width: 800px;
-        }
-
-        .cv-box h3 {
-            margin-bottom: 8px;
-        }
-
-        .cv-box p {
-            color: var(--muted);
-            margin-bottom: 18px;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            border-top: 1px solid var(--border);
-            text-align: center;
-            padding: 32px 20px;
-            color: #64748b;
-            font-size: 13px;
-        }
-
-        footer span {
-            color: var(--blue);
-        }
-
-        /* =========================
-           ANIMATIONS
-        ========================= */
-
-        .fade {
-            animation: fadeUp 1s ease forwards;
-        }
-
-        @keyframes fadeUp {
-
-            from {
-                opacity: 0;
-                transform: translateY(25px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-        }
-
-        /* =========================
-           TABLET
-        ========================= */
-
-        @media (max-width: 900px) {
-
-            .hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .buttons {
-                justify-content: center;
-            }
-
-            .photo-area {
-                margin-top: 20px;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 700px) {
-
-            nav {
-                position: relative;
-                min-height: 70px;
-                padding: 15px 20px;
-                flex-wrap: wrap;
-            }
-
-            .menu-btn {
-                display: block;
-            }
-
-            nav ul {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                align-items: center;
-                gap: 18px;
-                padding: 20px 0 10px;
-            }
-
-            nav ul.active {
-                display: flex;
-            }
-
-            nav a {
-                font-size: 15px;
-            }
-
-            #home {
-                padding-top: 130px;
-            }
-
-            section {
-                padding: 90px 20px;
-            }
-
-            .section-title {
-                font-size: 34px;
-                margin-bottom: 35px;
-            }
-
-            .hero h1 {
-                font-size: 47px;
-                letter-spacing: -2px;
-            }
-
-            .hero h2 {
-                font-size: 22px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .photo-placeholder {
-                width: 220px;
-                height: 220px;
-            }
-
-            .about-content p {
-                font-size: 16px;
-            }
-
-        }
-
-        /* =========================
-           SMALL PHONES
-        ========================= */
-
-        @media (max-width: 500px) {
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 43px;
-            }
-
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-
-            .project-content {
-                padding: 22px;
-            }
-
-            .project-links {
-                flex-direction: column;
-            }
-
-            .project-btn {
-                text-align: center;
-            }
-
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amoah Fredrick Kobby | Telecom Engineer</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #07111f;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(7, 17, 31, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 200, 255, 0.15);
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #00c8ff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00c8ff;
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 100px 25px;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+      padding-top: 130px;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .welcome {
+      color: #00c8ff;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: 50px;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .hero h2 {
+      color: #00c8ff;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #b7c4d3;
+      max-width: 650px;
+      margin-bottom: 30px;
+      font-size: 17px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 1px solid #00c8ff;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .btn.primary {
+      background: #00a8d8;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #00c8ff;
+      color: #06101c;
+    }
+
+    .photo-placeholder {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      border: 3px solid #00c8ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #00c8ff;
+      font-size: 18px;
+      text-align: center;
+      box-shadow: 0 0 35px rgba(0, 200, 255, 0.15);
+    }
+
+    /* TITLES */
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #9eacbb;
+    }
+
+    /* ABOUT */
+    .about-content {
+      background: #0c1a2b;
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 200, 255, 0.12);
+    }
+
+    .about-content p {
+      color: #c3cfdb;
+      margin-bottom: 15px;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: #0c1a2b;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 200, 255, 0.12);
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      border-color: #00c8ff;
+    }
+
+    .skill-card .icon {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .skill-card p {
+      color: #aebdcb;
+      font-size: 14px;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      background: #0c1a2b;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 200, 255, 0.12);
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #00c8ff;
+    }
+
+    .project-preview {
+      height: 150px;
+      background: #101f33;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      color: #00c8ff;
+    }
+
+    .project-info {
+      padding: 22px;
+    }
+
+    .project-number {
+      color: #00c8ff;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .project-info h3 {
+      margin: 8px 0 10px;
+    }
+
+    .project-info p {
+      color: #aebdcb;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      background: #132b40;
+      color: #00c8ff;
+      padding: 4px 9px;
+      border-radius: 20px;
+      font-size: 11px;
+    }
+
+    /* CV */
+    .cv-box {
+      text-align: center;
+      background: #0c1a2b;
+      padding: 45px 25px;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 200, 255, 0.12);
+    }
+
+    .cv-box h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .cv-box p {
+      color: #aebdcb;
+      margin-bottom: 25px;
+    }
+
+    /* CONTACT */
+    .contact-box {
+      text-align: center;
+      background: #0c1a2b;
+      padding: 40px 25px;
+      border-radius: 12px;
+    }
+
+    .contact-box p {
+      color: #b7c4d3;
+      margin-bottom: 20px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #050d17;
+      color: #8292a4;
+      border-top: 1px solid rgba(0, 200, 255, 0.1);
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #07111f;
+        flex-direction: column;
+        padding: 25px;
+        text-align: center;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 120px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .hero h2 {
+        font-size: 23px;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .photo-placeholder {
+        width: 220px;
+        height: 220px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
-
-<!-- =========================
-     NAVIGATION
-========================= -->
-
 <header>
+  <nav>
+    <div class="logo">Kobby.</div>
 
-    <nav>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-        <div class="logo">
-            Kobby<span>.</span>
-        </div>
-
-        <button
-            class="menu-btn"
-            onclick="toggleMenu()"
-            aria-label="Open navigation menu">
-            ☰
-        </button>
-
-        <ul id="navMenu">
-
-            <li>
-                <a href="#home" onclick="closeMenu()">Home</a>
-            </li>
-
-            <li>
-                <a href="#about" onclick="closeMenu()">About</a>
-            </li>
-
-            <li>
-                <a href="#skills" onclick="closeMenu()">Skills</a>
-            </li>
-
-            <li>
-                <a href="#projects" onclick="closeMenu()">Projects</a>
-            </li>
-
-            <li>
-                <a href="#contact" onclick="closeMenu()">Contact</a>
-            </li>
-
-        </ul>
-
-    </nav>
-
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" onclick="closeMenu()">Home</a></li>
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+      <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+      <li><a href="#cv" onclick="closeMenu()">CV</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
+<!-- HERO -->
+<section class="hero" id="home">
 
-<!-- =========================
-     HOME
-========================= -->
+  <div class="hero-text">
+    <div class="welcome">WELCOME TO MY PORTFOLIO</div>
 
-<section id="home">
+    <h1>I'm Amoah Fredrick Kobby</h1>
 
-    <div class="hero">
+    <h2>Telecom Engineer</h2>
 
-        <div class="hero-text fade">
+    <p>
+      I am an Electrical/Electronics Engineering graduate with a strong
+      interest in telecommunications, networking, software, artificial
+      intelligence and emerging technologies. I enjoy solving technical
+      problems and building practical technology solutions.
+    </p>
 
-            <small>
-                WELCOME TO MY PORTFOLIO
-            </small>
-
-            <h1>
-                I'm <span>Amoah Fredrick Kobby</span>
-            </h1>
-
-            <h2>
-                Telecom Engineer
-            </h2>
-
-            <p>
-                I am a Telecom Engineer passionate about
-                telecommunications, networking and technology.
-                I enjoy solving technical problems and building
-                practical solutions that connect people and systems.
-            </p>
-
-            <div class="buttons">
-
-                <a
-                    href="#projects"
-                    class="btn primary">
-                    View My Projects
-                </a>
-
-                <a
-                    href="#contact"
-                    class="btn outline">
-                    Contact Me
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- PHOTO WILL BE ADDED HERE LATER -->
-
-        <div class="photo-area">
-
-            <div class="photo-placeholder">
-
-                <div>
-
-                    <strong>
-                        YOUR PHOTO
-                    </strong>
-
-                    Professional profile photo
-                    will be added here later.
-
-                </div>
-
-            </div>
-
-        </div>
-
+    <div class="buttons">
+      <a href="#projects" class="btn primary">View My Projects</a>
+      <a href="#contact" class="btn">Contact Me</a>
     </div>
+  </div>
+
+  <div class="photo-placeholder">
+    YOUR PHOTO
+  </div>
 
 </section>
 
-
-<!-- =========================
-     ABOUT
-========================= -->
-
+<!-- ABOUT -->
 <section id="about">
 
-    <h2 class="section-title">
-        About <span>Me</span>
-    </h2>
+  <div class="section-title">
+    <h2>About Me</h2>
+    <p>Get to know me</p>
+  </div>
 
-    <div class="about-content">
+  <div class="about-content">
 
-        <p>
-            I am
-            <span class="highlight">
-                Amoah Fredrick Kobby
-            </span>,
-            a Telecom Engineer with an interest in
-            telecommunications, networking, software
-            and modern technology.
-        </p>
+    <p>
+      I am Amoah Fredrick Kobby, a Telecom Engineer with an HND background
+      in Electrical/Electronics Engineering.
+    </p>
 
-        <p>
-            My interest in technology goes beyond simply
-            using systems. I enjoy understanding how they
-            work, troubleshooting problems and creating
-            solutions that can be useful in the real world.
-        </p>
+    <p>
+      My interests include telecommunications, computer networking,
+      software development, artificial intelligence and technology.
+      I am passionate about learning new technologies and applying
+      engineering knowledge to real-world problems.
+    </p>
 
-        <p>
-            I am continuously developing my technical skills
-            and exploring new technologies while working
-            on practical projects.
-        </p>
+    <p>
+      I have gained practical exposure through industrial and technical
+      experiences, including work around biomedical engineering and
+      electrical power systems.
+    </p>
 
-    </div>
+    <p>
+      I am continuously developing my technical skills through personal
+      projects, simulations and hands-on experimentation.
+    </p>
+
+  </div>
 
 </section>
 
-
-<!-- =========================
-     SKILLS
-========================= -->
-
+<!-- SKILLS -->
 <section id="skills">
 
-    <h2 class="section-title">
-        My <span>Skills</span>
-    </h2>
+  <div class="section-title">
+    <h2>My Skills</h2>
+    <p>Technologies and areas I work with</p>
+  </div>
 
-    <div class="skills-grid">
+  <div class="skills-grid">
 
-
-        <div class="skill-card">
-
-            <div class="skill-icon">
-                📡
-            </div>
-
-            <h3>
-                Telecommunications
-            </h3>
-
-            <p>
-                Knowledge of telecommunication systems,
-                communication technologies and network
-                infrastructure.
-            </p>
-
-        </div>
-
-
-        <div class="skill-card">
-
-            <div class="skill-icon">
-                🌐
-            </div>
-
-            <h3>
-                Networking
-            </h3>
-
-            <p>
-                Understanding of computer networks,
-                connectivity and technical troubleshooting.
-            </p>
-
-        </div>
-
-
-        <div class="skill-card">
-
-            <div class="skill-icon">
-                💻
-            </div>
-
-            <h3>
-                Python
-            </h3>
-
-            <p>
-                Programming, automation and development
-                of practical software projects using Python.
-            </p>
-
-        </div>
-
-
-        <div class="skill-card">
-
-            <div class="skill-icon">
-                ⚙️
-            </div>
-
-            <h3>
-                Technology
-            </h3>
-
-            <p>
-                Strong interest in emerging technologies,
-                problem solving and technical innovation.
-            </p>
-
-        </div>
-
-
+    <div class="skill-card">
+      <div class="icon">📡</div>
+      <h3>Telecommunications</h3>
+      <p>
+        Understanding of telecommunication systems,
+        signal transmission and communication technologies.
+      </p>
     </div>
+
+    <div class="skill-card">
+      <div class="icon">🌐</div>
+      <h3>Networking</h3>
+      <p>
+        Computer networking, connectivity,
+        troubleshooting and network concepts.
+      </p>
+    </div>
+
+    <div class="skill-card">
+      <div class="icon">🐍</div>
+      <h3>Python</h3>
+      <p>
+        Python programming for automation,
+        AI projects and technical problem solving.
+      </p>
+    </div>
+
+    <div class="skill-card">
+      <div class="icon">🤖</div>
+      <h3>Artificial Intelligence</h3>
+      <p>
+        Exploring local AI models, computer vision,
+        voice assistants and intelligent automation.
+      </p>
+    </div>
+
+  </div>
 
 </section>
 
-
-<!-- =========================
-     PROJECTS
-========================= -->
-
+<!-- PROJECTS -->
 <section id="projects">
 
-    <h2 class="section-title">
-        Featured <span>Projects</span>
-    </h2>
+  <div class="section-title">
+    <h2>My Projects</h2>
+    <p>Some of the things I have worked on</p>
+  </div>
 
-    <div class="projects-grid">
+  <div class="projects-grid">
 
+    <div class="project-card">
 
-        <!-- PROJECT 1 -->
+      <div class="project-preview">🚦</div>
 
-        <div class="project-card">
+      <div class="project-info">
 
-            <div class="project-image">
+        <div class="project-number">PROJECT 01</div>
 
-                <div class="project-image-icon">
-                    🚦
-                </div>
-
-            </div>
-
-            <div class="project-content">
-
-                <div class="project-number">
-                    PROJECT 01
-                </div>
-
-                <h3>
-                    Traffic Management Simulation
-                </h3>
-
-                <p>
-                    A traffic simulation project designed to
-                    demonstrate traffic-light control, vehicle
-                    movement and emergency vehicle priority.
-                </p>
-
-                <div class="tags">
-
-                    <span class="project-tag">
-                        NetLogo
-                    </span>
-
-                    <span class="project-tag">
-                        Simulation
-                    </span>
-
-                    <span class="project-tag">
-                        Traffic
-                    </span>
-
-                </div>
-
-                <div class="project-links">
-
-                    <!-- Add actual project link later -->
-
-                    <a
-                        href="#contact"
-                        class="project-btn">
-                        Project Details
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- PROJECT 2 -->
-
-        <div class="project-card">
-
-            <div class="project-image">
-
-                <div class="project-image-icon">
-                    🤖
-                </div>
-
-            </div>
-
-            <div class="project-content">
-
-                <div class="project-number">
-                    PROJECT 02
-                </div>
-
-                <h3>
-                    Personal AI Assistant
-                </h3>
-
-                <p>
-                    A Python-based personal assistant using
-                    local AI, voice interaction and computer
-                    vision to create a JARVIS-style assistant.
-                </p>
-
-                <div class="tags">
-
-                    <span class="project-tag">
-                        Python
-                    </span>
-
-                    <span class="project-tag">
-                        Ollama
-                    </span>
-
-                    <span class="project-tag">
-                        AI
-                    </span>
-
-                    <span class="project-tag">
-                        Computer Vision
-                    </span>
-
-                </div>
-
-                <div class="project-links">
-
-                    <!-- Add GitHub project link later -->
-
-                    <a
-                        href="#contact"
-                        class="project-btn">
-                        Project Details
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- PROJECT 3 -->
-
-        <div class="project-card">
-
-            <div class="project-image">
-
-                <div class="project-image-icon">
-                    📡
-                </div>
-
-            </div>
-
-            <div class="project-content">
-
-                <div class="project-number">
-                    PROJECT 03
-                </div>
-
-                <h3>
-                    Telecommunication Projects
-                </h3>
-
-                <p>
-                    Academic and technical projects involving
-                    telecommunications, networking and
-                    technology.
-                </p>
-
-                <div class="tags">
-
-                    <span class="project-tag">
-                        Telecom
-                    </span>
-
-                    <span class="project-tag">
-                        Networking
-                    </span>
-
-                    <span class="project-tag">
-                        Engineering
-                    </span>
-
-                </div>
-
-                <div class="project-links">
-
-                    <a
-                        href="#contact"
-                        class="project-btn">
-                        Project Details
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     CV
-========================= -->
-
-<section id="cv">
-
-    <h2 class="section-title">
-        My <span>CV</span>
-    </h2>
-
-    <div class="cv-box">
-
-        <h3>
-            Curriculum Vitae
-        </h3>
+        <h3>Traffic Management Simulation</h3>
 
         <p>
-            My professional CV will be available here.
-            You will be able to view or download it directly
-            from my portfolio.
+          A traffic simulation project developed with NetLogo,
+          including traffic lights, vehicle movement and
+          emergency vehicle priority.
         </p>
 
-        <!-- We will connect your real CV here later -->
+        <div class="tags">
+          <span class="tag">NetLogo</span>
+          <span class="tag">Simulation</span>
+          <span class="tag">Traffic</span>
+        </div>
 
-        <a
-            href="#contact"
-            class="btn outline">
-            CV Coming Soon
-        </a>
+        <a href="#contact" class="btn">Project Details</a>
+
+      </div>
 
     </div>
 
+
+    <div class="project-card">
+
+      <div class="project-preview">🤖</div>
+
+      <div class="project-info">
+
+        <div class="project-number">PROJECT 02</div>
+
+        <h3>Personal AI Assistant</h3>
+
+        <p>
+          A Python-based personal assistant project exploring
+          voice interaction, local AI models, computer vision
+          and computer automation.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">AI</span>
+          <span class="tag">Ollama</span>
+        </div>
+
+        <a href="#contact" class="btn">Project Details</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="project-card">
+
+      <div class="project-preview">📡</div>
+
+      <div class="project-info">
+
+        <div class="project-number">PROJECT 03</div>
+
+        <h3>Telecommunication Projects</h3>
+
+        <p>
+          Academic and technical projects related to
+          telecommunications, electrical/electronics engineering
+          and networking.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Telecom</span>
+          <span class="tag">Engineering</span>
+          <span class="tag">Networking</span>
+        </div>
+
+        <a href="#contact" class="btn">Project Details</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
+<!-- CV -->
+<section id="cv">
 
-<!-- =========================
-     CONTACT
-========================= -->
+  <div class="section-title">
+    <h2>Curriculum Vitae</h2>
+    <p>Learn more about my education and experience</p>
+  </div>
 
+  <div class="cv-box">
+
+    <h3>My CV</h3>
+
+    <p>
+      Download my CV to view my educational background,
+      practical experience, technical skills and projects.
+    </p>
+
+    <a
+      href="Amoah_Fredrick_Kobby_CV.docx"
+      class="btn primary"
+      download
+    >
+      📄 Download My CV
+    </a>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
 <section id="contact">
 
-    <h2 class="section-title">
-        Let's <span>Connect</span>
-    </h2>
+  <div class="section-title">
+    <h2>Contact Me</h2>
+    <p>Let's connect</p>
+  </div>
 
-    <div class="contact-container">
+  <div class="contact-box">
 
+    <p>
+      If you would like to discuss a project, opportunity,
+      collaboration or anything related to technology,
+      feel free to contact me.
+    </p>
 
-        <div>
+    <div class="contact-links">
 
-            <p class="contact-intro">
+      <a
+        href="mailto:amoahfred836@gmail.com"
+        class="btn primary"
+      >
+        ✉ Email Me
+      </a>
 
-                Interested in working together,
-                discussing a project, or simply connecting?
+      <a
+        href="tel:0537345001"
+        class="btn"
+      >
+        📞 Call Me
+      </a>
 
-                I'd be happy to hear from you.
-
-            </p>
-
-            <br>
-
-            <div class="buttons">
-
-                <a
-                    href="mailto:amoahfred836@gmail.com"
-                    class="btn primary">
-                    Send Me an Email
-                </a>
-
-                <a
-                    href="https://github.com/Kobby836"
-                    target="_blank"
-                    rel="noopener"
-                    class="btn outline">
-                    Visit My GitHub
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="contact-card">
-
-
-            <div class="contact-item">
-
-                <small>
-                    Email
-                </small>
-
-                <a
-                    href="mailto:amoahfred836@gmail.com">
-                    amoahfred836@gmail.com
-                </a>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <small>
-                    GitHub
-                </small>
-
-                <a
-                    href="https://github.com/Kobby836"
-                    target="_blank"
-                    rel="noopener">
-                    github.com/Kobby836
-                </a>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <small>
-                    Profession
-                </small>
-
-                <span>
-                    Telecom Engineer
-                </span>
-
-            </div>
-
-
-        </div>
+      <a
+        href="https://github.com/Kobby836"
+        target="_blank"
+        class="btn"
+      >
+        GitHub
+      </a>
 
     </div>
 
+  </div>
+
 </section>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
-
-    © 2026 Amoah Fredrick Kobby ·
-    <span>Telecom Engineer</span>
-
+  <p>© 2026 Amoah Fredrick Kobby. All Rights Reserved.</p>
+  <p>Telecom Engineer | Technology Enthusiast</p>
 </footer>
-
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
 
 <script>
 
-    function toggleMenu() {
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
 
-        const menu =
-            document.getElementById("navMenu");
-
-        menu.classList.toggle("active");
-
-    }
-
-
-    function closeMenu() {
-
-        const menu =
-            document.getElementById("navMenu");
-
-        menu.classList.remove("active");
-
-    }
+  function closeMenu() {
+    document.getElementById("navLinks").classList.remove("active");
+  }
 
 </script>
-
 
 </body>
     </html>

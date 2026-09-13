@@ -1,276 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Amoah Fredrick Kobby | Telecom Engineer</title>
+    <title>Amoah Fredrick Kobby | Telecom Engineer</title>
 
-  <meta name="description" content="Portfolio of Amoah Fredrick Kobby, Telecom Engineer.">
-  
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0b1120;
-      color: #f8fafc;
-      line-height: 1.6;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background: #080d1d;
+            color: #ffffff;
+            line-height: 1.6;
+        }
 
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(11, 17, 32, 0.95);
-      padding: 18px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      border-bottom: 1px solid #1e293b;
-    }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #080d1d;
+            border-bottom: 1px solid #20283d;
+            z-index: 1000;
+        }
 
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-    }
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+        }
 
-    .logo span {
-      color: #38bdf8;
-    }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
 
-    nav a {
-      color: #cbd5e1;
-      text-decoration: none;
-      margin-left: 25px;
-      font-size: 15px;
-    }
+        .logo span {
+            color: #38bdf8;
+        }
 
-    nav a:hover {
-      color: #38bdf8;
-    }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
 
-    section {
-      padding: 100px 8%;
-    }
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 17px;
+        }
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background: radial-gradient(circle at top right, #12345a, #0b1120 45%);
-    }
+        nav a:hover {
+            color: #38bdf8;
+        }
 
-    .hero-content {
-      max-width: 750px;
-    }
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 100px 25px;
+        }
 
-    .hero small {
-      color: #38bdf8;
-      font-size: 18px;
-      font-weight: bold;
-    }
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 130px;
+        }
 
-    .hero h1 {
-      font-size: clamp(42px, 7vw, 75px);
-      line-height: 1.1;
-      margin: 15px 0;
-    }
+        .hero {
+            max-width: 750px;
+        }
 
-    .hero h1 span {
-      color: #38bdf8;
-    }
+        .hero small {
+            color: #38bdf8;
+            font-size: 18px;
+        }
 
-    .hero p {
-      color: #cbd5e1;
-      font-size: 19px;
-      max-width: 650px;
-      margin-bottom: 30px;
-    }
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 80px);
+            line-height: 1.05;
+            margin: 15px 0;
+        }
 
-    .btn {
-      display: inline-block;
-      padding: 13px 25px;
-      background: #38bdf8;
-      color: #06101c;
-      text-decoration: none;
-      border-radius: 7px;
-      font-weight: bold;
-      margin-right: 10px;
-    }
+        .hero h1 span {
+            color: #38bdf8;
+        }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
+        .hero h2 {
+            font-size: 28px;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
 
-    .btn-outline {
-      background: transparent;
-      border: 1px solid #38bdf8;
-      color: #38bdf8;
-    }
+        .hero p {
+            color: #94a3b8;
+            font-size: 18px;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
 
-    .title {
-      text-align: center;
-      margin-bottom: 50px;
-    }
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
 
-    .title h2 {
-      font-size: 38px;
-      margin-bottom: 10px;
-    }
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #38bdf8;
+        }
 
-    .title p {
-      color: #94a3b8;
-    }
+        .primary {
+            background: #38bdf8;
+            color: #06101d;
+        }
 
-    .about {
-      background: #0f172a;
-    }
+        .secondary {
+            color: #38bdf8;
+        }
 
-    .about-content {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-    }
+        .title {
+            font-size: 40px;
+            margin-bottom: 35px;
+        }
 
-    .about-content p {
-      color: #cbd5e1;
-      font-size: 18px;
-    }
+        .title span {
+            color: #38bdf8;
+        }
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+        .about-text {
+            max-width: 800px;
+            color: #aab6c8;
+            font-size: 18px;
+        }
 
-    .skill {
-      background: #111c31;
-      padding: 25px;
-      text-align: center;
-      border: 1px solid #1e293b;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
 
-    .skill:hover {
-      transform: translateY(-5px);
-      border-color: #38bdf8;
-    }
+        .skill,
+        .project {
+            background: #10172a;
+            border: 1px solid #20283d;
+            border-radius: 10px;
+            padding: 25px;
+        }
 
-    .skill h3 {
-      color: #38bdf8;
-      margin-bottom: 8px;
-    }
+        .skill h3,
+        .project h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
 
-    .skill p {
-      color: #94a3b8;
-      font-size: 14px;
-    }
+        .skill p,
+        .project p {
+            color: #94a3b8;
+        }
 
-    .projects {
-      background: #0f172a;
-    }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
 
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-    }
+        .contact-box {
+            background: #10172a;
+            border: 1px solid #20283d;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 700px;
+        }
 
-    .project {
-      background: #111c31;
-      padding: 30px;
-      border-radius: 10px;
-      border: 1px solid #1e293b;
-    }
+        .contact-box p {
+            margin: 12px 0;
+            color: #cbd5e1;
+        }
 
-    .project h3 {
-      color: #38bdf8;
-      margin-bottom: 12px;
-    }
+        .contact-box a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
 
-    .project p {
-      color: #cbd5e1;
-    }
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #20283d;
+            color: #64748b;
+        }
 
-    .contact {
-      text-align: center;
-    }
+        @media (max-width: 700px) {
+            nav {
+                height: auto;
+                padding: 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
 
-    .contact-box {
-      max-width: 650px;
-      margin: auto;
-      background: #111c31;
-      padding: 35px;
-      border-radius: 12px;
-      border: 1px solid #1e293b;
-    }
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
 
-    .contact-box p {
-      margin: 15px 0;
-      color: #cbd5e1;
-    }
+            nav a {
+                font-size: 14px;
+            }
 
-    .contact-box a {
-      color: #38bdf8;
-      text-decoration: none;
-    }
+            #home {
+                padding-top: 160px;
+            }
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #060b14;
-      color: #64748b;
-      border-top: 1px solid #1e293b;
-    }
+            .hero h1 {
+                font-size: 50px;
+            }
 
-    @media (max-width: 700px) {
-      nav {
-        padding: 15px 5%;
-      }
-
-      nav a {
-        margin-left: 10px;
-        font-size: 12px;
-      }
-
-      section {
-        padding: 80px 5%;
-      }
-
-      .hero h1 {
-        font-size: 45px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-    }
-  </style>
+            .hero h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <nav>
-    <div class="logo">Kobby<span>.</span></div>
+<header>
+    <nav>
+        <div class="logo">Kobby<span>.</span></div>
 
-    <div>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="home">
+    <div class="hero">
+        <small>WELCOME TO MY PORTFOLIO</small>
+
+        <h1>
+            I'm <span>Amoah Fredrick Kobby</span>
+        </h1>
+
+        <h2>Telecom Engineer</h2>
+
+        <p>
+            I am a passionate Telecom Engineer interested in technology,
+            telecommunications, networking, software, and innovative
+            solutions that connect people and systems.
+        </p>
+
+        <div class="buttons">
+            <a href="#projects" class="btn primary">View My Projects</a>
+            <a href="#contact" class="btn secondary">Contact Me</a>
+        </div>
     </div>
-  </nav>
+</section>
 
+<section id="about">
+    <h2 class="title">About <span>Me</span></h2>
 
-  <!-- HOME -->
+    <p class="about-text">
+        I am Amoah Fredrick Kobby, a Telecom Engineer with an interest in
+        telecommunications, networking, technology, and software development.
+        I enjoy learning new technologies, solving technical problems and
+        building practical projects.
+        <br><br>
+        My goal is to continue developing my technical skills and contribute
+        to projects that use technology to create useful and reliable
+        solutions.
+    </p>
+</section>
+
+<section id="skills">
+    <h2 class="title">My <span>Skills</span></h2>
+
+    <div class="skills">
+
+        <div class="skill">
+            <h3>Telecommunications</h3>
+            <p>
+                Understanding of telecommunication systems,
+                communication networks and related technologies.
+            </p>
+        </div>
+
+        <div class="skill">
+            <h3>Networking</h3>
+            <p>
+                Knowledge of computer networks, connectivity,
+                troubleshooting and network technologies.
+            </p>
+        </div>
+
+        <div class="skill">
+            <h3>Python</h3>
+            <p>
+                Programming and automation using Python.
+            </p>
+        </div>
+
+        <div class="skill">
+            <h3>Technology</h3>
+            <p>
+                Passion for exploring new technologies and
+                developing practical technical solutions.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="projects">
+    <h2 class="title">My <span>Projects</span></h2>
+
+    <div class="projects">
+
+        <div class="project">
+            <h3>Traffic Management Simulation</h3>
+            <p>
+                A traffic simulation project designed to demonstrate
+                traffic-light control and emergency vehicle movement.
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>Personal AI Assistant</h3>
+            <p>
+                A Python-based personal assistant project using local
+                AI models, voice interaction and computer vision.
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>Telecommunication Projects</h3>
+            <p>
+                Technical projects and academic work related to
+                telecommunications and networking.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="title">Contact <span>Me</span></h2>
+
+    <div class="contact-box">
+        <p>
+            <strong>Email:</strong>
+            <a href="mailto:amoahfred836@gmail.com">
+                amoahfred836@gmail.com
+            </a>
+        </p>
+
+        <p>
+            <strong>GitHub:</strong>
+            <a href="https://github.com/Kobby836" target="_blank">
+                github.com/Kobby836
+            </a>
+        </p>
+
+        <p>
+            If you would like to discuss a project, collaboration,
+            or professional opportunity, feel free to reach out.
+        </p>
+    </div>
+</section>
+
+<footer>
+    © 2026 Amoah Fredrick Kobby. All rights reserved.
+</footer>
+
+</body>
+</html>

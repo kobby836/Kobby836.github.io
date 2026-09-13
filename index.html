@@ -14,98 +14,134 @@
             scroll-behavior: smooth;
         }
 
+        :root {
+            --bg: #070b18;
+            --card: #10172a;
+            --border: #202b44;
+            --blue: #38bdf8;
+            --text: #f8fafc;
+            --muted: #94a3b8;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #080d1d;
-            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
         }
+
+        /* NAVIGATION */
 
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: #080d1d;
-            border-bottom: 1px solid #20283d;
+            background: rgba(7, 11, 24, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
             z-index: 1000;
         }
 
         nav {
-            max-width: 1200px;
+            max-width: 1150px;
+            height: 78px;
             margin: auto;
-            height: 80px;
+            padding: 0 25px;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 25px;
         }
 
         .logo {
             font-size: 28px;
-            font-weight: bold;
+            font-weight: 800;
+            letter-spacing: -1px;
         }
 
         .logo span {
-            color: #38bdf8;
+            color: var(--blue);
         }
 
         nav ul {
             display: flex;
+            gap: 28px;
             list-style: none;
-            gap: 30px;
         }
 
         nav a {
             color: #cbd5e1;
             text-decoration: none;
-            font-size: 17px;
+            font-size: 15px;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: #38bdf8;
+            color: var(--blue);
         }
 
+        /* GENERAL */
+
         section {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: auto;
-            padding: 100px 25px;
+            padding: 110px 25px;
         }
+
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 45px;
+            letter-spacing: -1px;
+        }
+
+        .section-title span {
+            color: var(--blue);
+        }
+
+        /* HERO */
 
         #home {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding-top: 130px;
+            padding-top: 140px;
         }
 
         .hero {
-            max-width: 750px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.5fr 0.8fr;
+            gap: 60px;
+            align-items: center;
         }
 
-        .hero small {
-            color: #38bdf8;
-            font-size: 18px;
+        .hero-text small {
+            color: var(--blue);
+            font-weight: bold;
+            letter-spacing: 3px;
+            font-size: 13px;
         }
 
         .hero h1 {
-            font-size: clamp(45px, 8vw, 80px);
-            line-height: 1.05;
-            margin: 15px 0;
+            font-size: clamp(48px, 7vw, 78px);
+            line-height: 1;
+            margin: 18px 0;
+            letter-spacing: -3px;
         }
 
         .hero h1 span {
-            color: #38bdf8;
+            color: var(--blue);
         }
 
         .hero h2 {
-            font-size: 28px;
+            font-size: 27px;
             color: #cbd5e1;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .hero p {
-            color: #94a3b8;
+            color: var(--muted);
             font-size: 18px;
             max-width: 650px;
             margin-bottom: 30px;
@@ -113,127 +149,325 @@
 
         .buttons {
             display: flex;
-            gap: 15px;
+            gap: 14px;
             flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
-            padding: 13px 25px;
-            border-radius: 6px;
+            padding: 13px 23px;
+            border-radius: 7px;
             text-decoration: none;
             font-weight: bold;
-            border: 1px solid #38bdf8;
+            transition: 0.3s;
         }
 
         .primary {
-            background: #38bdf8;
-            color: #06101d;
+            background: var(--blue);
+            color: #04101a;
         }
 
-        .secondary {
-            color: #38bdf8;
+        .primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
         }
 
-        .title {
-            font-size: 40px;
-            margin-bottom: 35px;
+        .outline {
+            border: 1px solid var(--blue);
+            color: var(--blue);
         }
 
-        .title span {
-            color: #38bdf8;
+        .outline:hover {
+            background: var(--blue);
+            color: #04101a;
         }
 
-        .about-text {
-            max-width: 800px;
-            color: #aab6c8;
+        /* PHOTO PLACEHOLDER */
+
+        .photo-area {
+            display: flex;
+            justify-content: center;
+        }
+
+        .photo-placeholder {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            border: 2px dashed var(--blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--muted);
+            padding: 30px;
+            background: radial-gradient(circle, #111d36, var(--bg));
+        }
+
+        .photo-placeholder strong {
+            display: block;
+            color: var(--blue);
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        /* ABOUT */
+
+        .about-content {
+            max-width: 850px;
+        }
+
+        .about-content p {
+            color: var(--muted);
             font-size: 18px;
+            margin-bottom: 18px;
         }
 
-        .skills {
+        .highlight {
+            color: var(--blue);
+            font-weight: bold;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
         }
 
-        .skill,
-        .project {
-            background: #10172a;
-            border: 1px solid #20283d;
-            border-radius: 10px;
-            padding: 25px;
+        .skill-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 28px 22px;
+            border-radius: 12px;
+            transition: 0.3s;
         }
 
-        .skill h3,
-        .project h3 {
-            color: #38bdf8;
+        .skill-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--blue);
+        }
+
+        .skill-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            color: var(--blue);
             margin-bottom: 10px;
         }
 
-        .skill p,
-        .project p {
-            color: #94a3b8;
+        .skill-card p {
+            color: var(--muted);
+            font-size: 14px;
         }
 
-        .projects {
+        /* PROJECTS */
+
+        .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
         }
 
-        .contact-box {
-            background: #10172a;
-            border: 1px solid #20283d;
-            border-radius: 10px;
+        .project-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
             padding: 30px;
-            max-width: 700px;
+            transition: 0.3s;
         }
 
-        .contact-box p {
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--blue);
+        }
+
+        .project-number {
+            color: var(--blue);
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+        .project-card h3 {
+            font-size: 21px;
             margin: 12px 0;
-            color: #cbd5e1;
         }
 
-        .contact-box a {
-            color: #38bdf8;
-            text-decoration: none;
+        .project-card p {
+            color: var(--muted);
+            font-size: 15px;
         }
+
+        .project-tag {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 5px 10px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            color: var(--blue);
+            font-size: 12px;
+        }
+
+        /* CONTACT */
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .contact-intro {
+            color: var(--muted);
+            font-size: 18px;
+        }
+
+        .contact-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+        }
+
+        .contact-item small {
+            display: block;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+
+        .contact-item a {
+            color: var(--blue);
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        /* FOOTER */
 
         footer {
+            border-top: 1px solid var(--border);
             text-align: center;
-            padding: 30px;
-            border-top: 1px solid #20283d;
+            padding: 30px 20px;
             color: #64748b;
+            font-size: 13px;
         }
 
-        @media (max-width: 700px) {
+        /* ANIMATION */
+
+        .fade {
+            animation: fadeUp 1s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
             nav {
                 height: auto;
-                padding: 20px;
+                padding: 18px 15px;
                 flex-direction: column;
                 gap: 15px;
             }
 
             nav ul {
-                gap: 15px;
+                gap: 16px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
 
             nav a {
-                font-size: 14px;
+                font-size: 13px;
             }
 
             #home {
-                padding-top: 160px;
+                padding-top: 170px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text {
+                order: 1;
+            }
+
+            .photo-area {
+                order: 2;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .photo-placeholder {
+                width: 220px;
+                height: 220px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            section {
+                padding: 90px 18px;
+            }
+
+            .section-title {
+                font-size: 32px;
             }
 
             .hero h1 {
-                font-size: 50px;
+                font-size: 48px;
             }
 
             .hero h2 {
                 font-size: 22px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-card {
+                padding: 22px;
             }
         }
     </style>
@@ -243,7 +477,10 @@
 
 <header>
     <nav>
-        <div class="logo">Kobby<span>.</span></div>
+
+        <div class="logo">
+            Kobby<span>.</span>
+        </div>
 
         <ul>
             <li><a href="#home">Home</a></li>
@@ -252,146 +489,290 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+
     </nav>
 </header>
 
+
+<!-- HOME -->
+
 <section id="home">
+
     <div class="hero">
-        <small>WELCOME TO MY PORTFOLIO</small>
 
-        <h1>
-            I'm <span>Amoah Fredrick Kobby</span>
-        </h1>
+        <div class="hero-text fade">
 
-        <h2>Telecom Engineer</h2>
+            <small>WELCOME TO MY PORTFOLIO</small>
 
-        <p>
-            I am a passionate Telecom Engineer interested in technology,
-            telecommunications, networking, software, and innovative
-            solutions that connect people and systems.
-        </p>
+            <h1>
+                I'm <span>Amoah Fredrick Kobby</span>
+            </h1>
 
-        <div class="buttons">
-            <a href="#projects" class="btn primary">View My Projects</a>
-            <a href="#contact" class="btn secondary">Contact Me</a>
+            <h2>Telecom Engineer</h2>
+
+            <p>
+                I am a Telecom Engineer passionate about telecommunications,
+                networking and technology. I enjoy solving technical problems
+                and building practical solutions that connect people and systems.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn primary">
+                    View My Projects
+                </a>
+
+                <a href="#contact" class="btn outline">
+                    Contact Me
+                </a>
+
+            </div>
+
         </div>
+
+
+        <div class="photo-area">
+
+            <div class="photo-placeholder">
+
+                <div>
+                    <strong>YOUR PHOTO</strong>
+                    Profile photo will be added here later.
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
+
 </section>
+
+
+<!-- ABOUT -->
 
 <section id="about">
-    <h2 class="title">About <span>Me</span></h2>
 
-    <p class="about-text">
-        I am Amoah Fredrick Kobby, a Telecom Engineer with an interest in
-        telecommunications, networking, technology, and software development.
-        I enjoy learning new technologies, solving technical problems and
-        building practical projects.
-        <br><br>
-        My goal is to continue developing my technical skills and contribute
-        to projects that use technology to create useful and reliable
-        solutions.
-    </p>
+    <h2 class="section-title">
+        About <span>Me</span>
+    </h2>
+
+    <div class="about-content">
+
+        <p>
+            I am <span class="highlight">Amoah Fredrick Kobby</span>,
+            a Telecom Engineer with an interest in telecommunications,
+            networking, software and modern technology.
+        </p>
+
+        <p>
+            My interest in technology goes beyond simply using systems.
+            I enjoy understanding how they work, troubleshooting problems
+            and creating solutions that can be useful in the real world.
+        </p>
+
+        <p>
+            I am continuously developing my technical skills and exploring
+            new technologies while working on practical projects.
+        </p>
+
+    </div>
+
 </section>
+
+
+<!-- SKILLS -->
 
 <section id="skills">
-    <h2 class="title">My <span>Skills</span></h2>
 
-    <div class="skills">
+    <h2 class="section-title">
+        My <span>Skills</span>
+    </h2>
 
-        <div class="skill">
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <div class="skill-icon">📡</div>
             <h3>Telecommunications</h3>
             <p>
-                Understanding of telecommunication systems,
-                communication networks and related technologies.
+                Knowledge of telecommunication systems,
+                communication technologies and network infrastructure.
             </p>
         </div>
 
-        <div class="skill">
+        <div class="skill-card">
+            <div class="skill-icon">🌐</div>
             <h3>Networking</h3>
             <p>
-                Knowledge of computer networks, connectivity,
-                troubleshooting and network technologies.
+                Understanding of computer networks,
+                connectivity and technical troubleshooting.
             </p>
         </div>
 
-        <div class="skill">
+        <div class="skill-card">
+            <div class="skill-icon">💻</div>
             <h3>Python</h3>
             <p>
-                Programming and automation using Python.
+                Programming, automation and development of
+                practical software projects using Python.
             </p>
         </div>
 
-        <div class="skill">
+        <div class="skill-card">
+            <div class="skill-icon">⚙️</div>
             <h3>Technology</h3>
             <p>
-                Passion for exploring new technologies and
-                developing practical technical solutions.
+                Strong interest in emerging technologies,
+                problem solving and technical innovation.
             </p>
         </div>
 
     </div>
+
 </section>
+
+
+<!-- PROJECTS -->
 
 <section id="projects">
-    <h2 class="title">My <span>Projects</span></h2>
 
-    <div class="projects">
+    <h2 class="section-title">
+        Featured <span>Projects</span>
+    </h2>
 
-        <div class="project">
+    <div class="projects-grid">
+
+        <div class="project-card">
+
+            <div class="project-number">PROJECT 01</div>
+
             <h3>Traffic Management Simulation</h3>
+
             <p>
                 A traffic simulation project designed to demonstrate
-                traffic-light control and emergency vehicle movement.
+                traffic-light control, vehicle movement and emergency
+                vehicle priority.
             </p>
+
+            <span class="project-tag">NetLogo</span>
+
         </div>
 
-        <div class="project">
+
+        <div class="project-card">
+
+            <div class="project-number">PROJECT 02</div>
+
             <h3>Personal AI Assistant</h3>
+
             <p>
-                A Python-based personal assistant project using local
-                AI models, voice interaction and computer vision.
+                A Python-based personal assistant using local AI,
+                voice interaction and computer vision to create
+                a JARVIS-style assistant.
             </p>
+
+            <span class="project-tag">Python + AI</span>
+
         </div>
 
-        <div class="project">
+
+        <div class="project-card">
+
+            <div class="project-number">PROJECT 03</div>
+
             <h3>Telecommunication Projects</h3>
+
             <p>
-                Technical projects and academic work related to
-                telecommunications and networking.
+                Academic and technical projects involving
+                telecommunications, networking and technology.
             </p>
+
+            <span class="project-tag">Telecom</span>
+
         </div>
 
     </div>
+
 </section>
+
+
+<!-- CONTACT -->
 
 <section id="contact">
-    <h2 class="title">Contact <span>Me</span></h2>
 
-    <div class="contact-box">
-        <p>
-            <strong>Email:</strong>
-            <a href="mailto:amoahfred836@gmail.com">
-                amoahfred836@gmail.com
-            </a>
-        </p>
+    <h2 class="section-title">
+        Let's <span>Connect</span>
+    </h2>
 
-        <p>
-            <strong>GitHub:</strong>
-            <a href="https://github.com/Kobby836" target="_blank">
-                github.com/Kobby836
-            </a>
-        </p>
+    <div class="contact-container">
 
-        <p>
-            If you would like to discuss a project, collaboration,
-            or professional opportunity, feel free to reach out.
-        </p>
+        <div>
+
+            <p class="contact-intro">
+                Interested in working together, discussing a project,
+                or simply connecting? Feel free to reach out.
+            </p>
+
+            <br>
+
+            <div class="buttons">
+
+                <a
+                    href="mailto:amoahfred836@gmail.com"
+                    class="btn primary">
+                    Send Me an Email
+                </a>
+
+                <a
+                    href="https://github.com/Kobby836"
+                    target="_blank"
+                    class="btn outline">
+                    Visit My GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <div class="contact-item">
+
+                <small>Email</small>
+
+                <a href="mailto:amoahfred836@gmail.com">
+                    amoahfred836@gmail.com
+                </a>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <small>GitHub</small>
+
+                <a
+                    href="https://github.com/Kobby836"
+                    target="_blank">
+                    github.com/Kobby836
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
+
 </section>
 
+
 <footer>
-    © 2026 Amoah Fredrick Kobby. All rights reserved.
+
+    © 2026 Amoah Fredrick Kobby · Telecom Engineer
+
 </footer>
 
+
 </body>
-</html>
+    </html>
